@@ -128,9 +128,8 @@ spec:
   
 ```
 
-12. run this command : kubectl get services
-13. When you want to access the web application you can find the ports that need to be replaced (instead of 8080 and 9990) e.g.  8080:30851/TCP,9990:30243/TCP
-14.  You can access to gICS web application on http://SERVER IP ADDRESS:30851/gics-web , wildfly console on  http://SERVER IP ADDRESS:30243/console , and wsdl XML interface on http://SERVER IP ADDRESS:30851/gics/gicsService?wsdl
+12. Ececute this command : ´ kubectl get services` then you will see something like e.g.  8080:30851/TCP,9990:30243/TCP , so use these ports instead of 8080 and 9990 ports.
+13.  You can access to gICS web application on http://SERVER IP ADDRESS:30851/gics-web , wildfly console on  http://SERVER IP ADDRESS:30243/console , and wsdl XML interface on http://SERVER IP ADDRESS:30851/gics/gicsService?wsdl
 
 
 
