@@ -18,7 +18,15 @@ Follow these steps:
 6. Test the connection to DB server and each DB from other devices
 7. Make sure the ports: 8080 and 9990 are accessible on your Kubernetes infrastructure
 8. Deploy following yml file to create gics pod
-
+```yaml
+# Example YAML configuration
+key1: value1
+key2:
+  - item1
+  - item2
+key3:
+  nested_key1: nested_value1
+  nested_key2: nested_value2
 
    ```bash
   apiVersion: apps/v1
