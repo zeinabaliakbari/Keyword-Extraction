@@ -17,7 +17,7 @@ Follow these steps:
 5. After that check two DBs including gics and gras with all tables, in addition, you must have two users: gras_user and gics_user . You can find the password of these users inside of script files
 6. Test the connection to DB server and each DB from other devices
 7. Make sure the ports: 8080 and 9990 are accessible on your Kubernetes infrastructure
-8. Deploy following yml file to create gics pod
+9. Create a yml file : gICS.yml according to the following content and  deploy it (kubectl apply -f gICS.yml)
 ```yaml
 
 apiVersion: apps/v1
@@ -96,10 +96,34 @@ spec:
           hostPath:
             path: /opt/gics/addins  # Replace with the actual host path
 ```
-9. Navigate to the project directory in your local  
-10. pip install -r project/requirements.txt
-11. python project/pipeline.py
-12. python project/training.py
+9. Check your deployment, you must have two pods , also you need to see pods log to make sure about DB connection   
+10. Create a gics-service.yml file using following content , We use this yml file to create a service that makes our web application available for external network requests.
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: gics-wildfly-service
+spec:
+  selector:
+    app: gics-wildfly
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: management
+      protocol: TCP
+      port: 9990
+      targetPort: 9990
+  type: NodePort
+
+
+    
+```
+
+
+12. python project/pipeline.py
+13. python project/training.py
 
 ## Datasets
 
