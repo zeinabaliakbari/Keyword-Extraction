@@ -95,7 +95,7 @@ spec:
         - name: addins
           hostPath:
             path: /opt/gics/addins  # Replace with the actual host path
-```yaml
+```
 9. Navigate to the project directory in your local  
 10. pip install -r project/requirements.txt
 11. python project/pipeline.py
