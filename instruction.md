@@ -10,23 +10,23 @@ The primary objectives of this document is present steps to deploy gICS web appl
 
 Follow these steps:
 
-1. Create a DB server. We use MySQL server for this project
-2. Download gics depoyment package from https://www.ths-greifswald.de/en/researchers-general-public/gics/#
-3. Extract content of gICS package - find sqls folder, you can find three script files there
-4. Connect to MySQL server and run each script
-5. After that check two DBs including gics and gras with all tables, in addition, you must have two users: gras_user and gics_user . You can find the password of these users inside of script files
-6. Test the connection to DB server and each DB from other devices
-7.Prepare the Kubernetes infrastructure. After this step, all operations are performed on the server hosting the Kubernetes infrastructure
-8. Make sure the ports: 8080 and 9990 are accessible on your Kubernetes infrastructure (check firewall IP table)
-9. Create following directories on the host of Kubernetes infrastructure   
+1. Create a separate DB server. For this project, we will be using MySQL server.
+2. Download the gICS deployment package from  https://www.ths-greifswald.de/en/researchers-general-public/gics/#
+3. Extract the contents of the gICS package. Inside, you will find a folder named 'sqls' containing three script files.
+4. Connect to the MySQL server and execute each script.
+5. After execution, verify the presence of two databases: 'gics' and 'gras', along with all their tables. Additionally, ensure that two user accounts exist: 'gras_user' and 'gics_user'. The passwords for these users can be found within the script files.
+6. Test the connection to the DB server and each database from other devices.
+7. Prepare the Kubernetes infrastructure. Following operations will be performed on the server hosting the Kubernetes infrastructure.
+8. Confirm that ports 8080 and 9990 are accessible on your Kubernetes infrastructure. You can check this by inspecting the firewall IP table.
+9. Create the following directories on the host of the Kubernetes infrastructure:
    * sudo mkdir -p /opt/gics/deployments
    * sudo mkdir -p /opt/gics/logs
    * sudo mkdir -p /opt/gics/addins
    * sudo mkdir -p /opt/gics/jboss
   
-and set their access permissions (read, write and execute permissions for everyone). In the gICS package you downloaded, find the three folders Deployments, log and jboss and copy their contents to your directories with same names.
+and set their access permissions (read, write and execute permissions for everyone). In the gICS package you downloaded, find the three folders Deployments, log and jboss, and copy their contents to your directories with same names.
  
-10. Create a yml file : gICS.yml according to the following content and  deploy it (kubectl apply -f gICS.yml)
+10. Create a yml file : gICS.yml , according to the following content. Then, execute : `kubectl apply -f gICS.yml´   to deploy it.
 ```yaml
 
 apiVersion: apps/v1
