@@ -4,7 +4,7 @@
 
 ## Objectives
 
-The primary objectives of this document is present steps to deploy gICS web application on kubenetes so that DB server is MySQL and located on separate standalone server.
+The primary objective of this document is to present steps for deploying the gICS web application on Kubernetes. In our deployment,  database server is MySQL and is located on a separate standalone server.
 
 ## Deployment Process
 
